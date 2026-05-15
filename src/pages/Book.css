@@ -279,6 +279,7 @@
   .contact-card { padding: 32px 24px; flex-direction: row; text-align: left; gap: 20px; }
   .contact-card-icon { margin-bottom: 0; flex-shrink: 0; }
   .contact-card-value { font-size: 17px; }
+  .contact-card-sub { display: none; }
 
   .expect-section { padding: 48px 0; }
   .expect-steps { flex-direction: column; gap: 24px; }

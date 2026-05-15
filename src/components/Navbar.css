@@ -1,0 +1,134 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid #e0ddd6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.brand-11 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--green-dark);
+  letter-spacing: -0.5px;
+}
+
+.brand-name {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--green-dark);
+}
+
+.nav-links a.active {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+.nav-links .nav-cta {
+  background: var(--green-dark);
+  color: var(--white);
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta.active {
+  background: var(--green-mid);
+  color: var(--white);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--green-dark);
+  transition: all 0.25s;
+  transform-origin: center;
+}
+
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-bottom: 1px solid #e0ddd6;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .nav-links.open { max-height: 300px; }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 24px;
+    border-bottom: 1px solid #f0ede6;
+    width: 100%;
+  }
+
+  .nav-links .nav-cta {
+    border-radius: 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,130 @@
+
+/* LEAF DECORATIONS */
+:root {
+  --leaf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 280'%3E%3Cpath d='M100 270 C60 220 10 160 20 90 C30 30 80 5 100 5 C120 5 170 30 180 90 C190 160 140 220 100 270Z' fill='%23a8c490' opacity='0.7'/%3E%3Cpath d='M100 270 C100 180 95 100 100 5' stroke='%2388aa68' stroke-width='2.5' fill='none' opacity='0.8'/%3E%3Cpath d='M100 200 C75 175 48 155 28 130' stroke='%2388aa68' stroke-width='1.5' fill='none' opacity='0.65'/%3E%3Cpath d='M100 210 C128 182 155 162 175 138' stroke='%2388aa68' stroke-width='1.5' fill='none' opacity='0.65'/%3E%3Cpath d='M100 150 C72 128 45 110 25 88' stroke='%2388aa68' stroke-width='1.2' fill='none' opacity='0.55'/%3E%3Cpath d='M100 162 C130 136 157 118 177 94' stroke='%2388aa68' stroke-width='1.2' fill='none' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* base */
+.leaf-a, .leaf-b, .leaf-c, .leaf-d, .leaf-e, .leaf-f {
+  position: relative;
+  overflow: hidden;
+}
+.leaf-a::before, .leaf-a::after,
+.leaf-b::before, .leaf-b::after,
+.leaf-c::before, .leaf-c::after,
+.leaf-d::before, .leaf-d::after,
+.leaf-e::before, .leaf-e::after,
+.leaf-f::before, .leaf-f::after {
+  content: '';
+  position: absolute;
+  background-image: var(--leaf);
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* A — large left, small right flipped */
+.leaf-a::before { width:200px; height:280px; top:-50px;   left:-50px;  transform:rotate(-20deg);             opacity:0.28; }
+.leaf-a::after  { width:120px; height:168px; bottom:-30px; right:-28px; transform:rotate(150deg) scaleX(-1); opacity:0.26; }
+
+/* B — small left flipped, large right */
+.leaf-b::before { width:115px; height:161px; top:-25px;   left:-22px;  transform:rotate(-45deg) scaleX(-1);  opacity:0.26; }
+.leaf-b::after  { width:210px; height:294px; bottom:-60px; right:-55px; transform:rotate(110deg);            opacity:0.28; }
+
+/* C — medium both sides, opposite angles */
+.leaf-c::before { width:155px; height:217px; bottom:-50px; left:-38px;  transform:rotate(200deg);             opacity:0.27; }
+.leaf-c::after  { display: none; }
+
+/* D — large left bottom, tiny right top */
+.leaf-d::before { width:195px; height:273px; bottom:-50px; left:-42px;  transform:rotate(200deg) scaleX(-1); opacity:0.28; }
+.leaf-d::after  { width:105px; height:147px; top:-20px;   right:-20px; transform:rotate(45deg);              opacity:0.25; }
+
+/* E — two medium leaves both left, staggered */
+.leaf-e::before { width:135px; height:189px; top:-30px;   left:-30px;  transform:rotate(-15deg);             opacity:0.27; }
+.leaf-e::after  { width:165px; height:231px; bottom:-42px; right:-40px; transform:rotate(110deg) scaleX(-1); opacity:0.26; }
+
+/* F — two leaves right side */
+.leaf-f::before { display: none; }
+.leaf-f::after  { width:175px; height:245px; bottom:-48px; right: 36px; transform:rotate(-170deg) scaleX(-1);opacity:0.28; }
+
+/* SCROLL ANIMATIONS */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* shared layout utilities */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--green-dark);
+  color: var(--white);
+  padding: 14px 36px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  transition: background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--green-mid);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: var(--green-dark);
+  padding: 13px 34px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 2px solid var(--green-dark);
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--green-dark);
+  color: var(--white);
+}
+
+.section-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 16px auto 24px;
+}
+
+.gold-divider.left {
+  margin-left: 0;
+}

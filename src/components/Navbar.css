@@ -103,6 +103,9 @@
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
 
+  .nav-brand img { height: 28px; }
+  .brand-name { font-size: 9px; letter-spacing: 2px; }
+
   .nav-links {
     position: absolute;
     top: 72px;
@@ -116,6 +119,7 @@
     transition: max-height 0.3s ease;
     border-bottom: 1px solid #e0ddd6;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 99;
   }
 
   .nav-links.open { max-height: 300px; }
@@ -125,10 +129,12 @@
     padding: 16px 24px;
     border-bottom: 1px solid #f0ede6;
     width: 100%;
+    font-size: 15px;
   }
 
   .nav-links .nav-cta {
     border-radius: 0;
     text-align: center;
+    margin: 0;
   }
 }

@@ -431,13 +431,28 @@
 @media (max-width: 900px) {
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-cards { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .meet-inner { padding: 60px 24px; }
 }
 
 @media (max-width: 640px) {
-  .hero-actions { flex-direction: column; }
-  .trust-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .cta-inner { flex-direction: column; text-align: center; }
-  .cta-contact { flex-direction: column; }
+  .hero { min-height: 100svh; }
+  .hero-content { padding: 100px 16px 60px; }
+  .hero-title { font-size: clamp(32px, 10vw, 52px); }
+  .hero-sub { font-size: 15px; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-actions a { width: 100%; text-align: center; }
+
+  .services-section { padding: 56px 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+  .section-head { text-align: center; }
+
+  .meet-owner { padding: 56px 0; }
+  .meet-inner { text-align: center; }
+  .meet-tags { justify-content: center; }
+  .meet-bio { text-align: center; }
+
+  .gallery-photo { width: 160px; height: 240px; }
+
+  .cta-banner { padding: 40px 0; }
+  .cta-inner { flex-direction: column; text-align: center; gap: 20px; }
 }

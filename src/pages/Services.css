@@ -263,17 +263,36 @@
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .svc-item,
-  .svc-item.reverse {
-    grid-template-columns: 1fr;
-  }
+  .svc-item.reverse { grid-template-columns: 1fr; }
   .svc-item.reverse .svc-text { order: 1; }
   .svc-item.reverse .svc-visual { order: 2; }
-  .svc-visual-box { width: 200px; height: 200px; font-size: 60px; }
+  .svc-visual-box { width: 200px; height: 200px; }
   .addons-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-table-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .pricing-table-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
+  .svc-hero { padding: 60px 0; }
+  .svc-hero h1 { font-size: clamp(32px, 9vw, 48px); }
+  .svc-list-section { padding: 48px 0; }
+  .svc-list { gap: 48px; }
+  .svc-item { gap: 24px; }
+  .svc-visual { display: none; }
+  .svc-text { padding: 0; }
+  .svc-desc { font-size: 15px; }
+
+  .addons-section { padding: 48px 0; }
+  .addons-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .addon-card { padding: 20px 14px; }
+
+  .pricing-section { padding: 48px 0; }
+  .price-col { padding: 24px 20px; }
+
+  .svc-cta { padding: 48px 0; }
+  .svc-cta-btns { flex-direction: column; gap: 12px; }
+  .svc-cta-btns a { width: 100%; text-align: center; }
+}
+
+@media (max-width: 400px) {
   .addons-grid { grid-template-columns: 1fr; }
-  .svc-list { gap: 52px; }
 }
